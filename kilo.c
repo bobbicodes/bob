@@ -1,37 +1,44 @@
 /*** includes ***/
 /*** defines ***/
 /*** data ***/
+/*** prototypes ***/
 /*** terminal ***/
 /*** row operations ***/
+/*** editor operations ***/
 /*** file i/o ***/
 /*** append buffer ***/
 /*** output ***/
-void editorScroll() { … }
-void editorDrawRows(struct abuf *ab) { … }
-void editorDrawStatusBar(struct abuf *ab) { … }
-void editorDrawMessageBar(struct abuf *ab) {
-  abAppend(ab, "\x1b[K", 3);
-  int msglen = strlen(E.statusmsg);
-  if (msglen > E.screencols) msglen = E.screencols;
-  if (msglen && time(NULL) - E.statusmsg_time < 5)
-    abAppend(ab, E.statusmsg, msglen);
-}
-void editorRefreshScreen() {
-  editorScroll();
-  struct abuf ab = ABUF_INIT;
-  abAppend(&ab, "\x1b[?25l", 6);
-  abAppend(&ab, "\x1b[H", 3);
-  editorDrawRows(&ab);
-  editorDrawStatusBar(&ab);
-  editorDrawMessageBar(&ab);
-  char buf[32];
-  snprintf(buf, sizeof(buf), "\x1b[%d;%dH", (E.cy - E.rowoff) + 1,
-                                            (E.rx - E.coloff) + 1);
-  abAppend(&ab, buf, strlen(buf));
-  abAppend(&ab, "\x1b[?25h", 6);
-  write(STDOUT_FILENO, ab.b, ab.len);
-  abFree(&ab);
-}
-void editorSetStatusMessage(const char *fmt, ...) { … }
 /*** input ***/
+char *editorPrompt(char *prompt) {
+  size_t bufsize = 128;
+  char *buf = malloc(bufsize);
+  size_t buflen = 0;
+  buf[0] = '\0';
+  while (1) {
+    editorSetStatusMessage(prompt, buf);
+    editorRefreshScreen();
+    int c = editorReadKey();
+    if (c == DEL_KEY || c == CTRL_KEY('h') || c == BACKSPACE) {
+      if (buflen != 0) buf[--buflen] = '\0';
+    } else if (c == '\x1b') {
+      editorSetStatusMessage("");
+      free(buf);
+      return NULL;
+    } else if (c == '\r') {
+      if (buflen != 0) {
+        editorSetStatusMessage("");
+        return buf;
+      }
+    } else if (!iscntrl(c) && c < 128) {
+      if (buflen == bufsize - 1) {
+        bufsize *= 2;
+        buf = realloc(buf, bufsize);
+      }
+      buf[buflen++] = c;
+      buf[buflen] = '\0';
+    }
+  }
+}
+void editorMoveCursor(int key) { … }
+void editorProcessKeypress() { … }
 /*** init ***/
