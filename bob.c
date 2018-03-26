@@ -59,7 +59,9 @@ void editorRefreshScreen();
 char *editorPrompt(char *prompt);
 
 void die(const char *s) {
-	printf("\r\n");
+	write(STDOUT_FILENO, "\x1b[2J", 4);
+	write(STDOUT_FILENO, "\x1b[H", 3);
+	
 	perror(s);
 	exit(1);
 }
@@ -423,7 +425,7 @@ void editorDrawRows(struct abuf *ab) {
 void editorDrawStatusBar(struct abuf *ab) {
   abAppend(ab, "\x1b[7m", 4);
   char status[80], rstatus[80];
-  int len = snprintf(status, sizeof(status), "%.20s - %d lines %s",
+  int len = snprintf(status, sizeof(status),
     E.filename ? E.filename : "[No Name]", E.numrows,
     E.dirty ? "(modified)" : "");
   int rlen = snprintf(rstatus, sizeof(rstatus), "%d/%d",
@@ -555,11 +557,12 @@ void editorProcessKeypress() {
       break;
     case CTRL_KEY('q'):
       if (E.dirty && quit_times > 0) {
-        editorSetStatusMessage("Unsaved changes! Ctrl-Q to confirm.");
+        editorSetStatusMessage("Warning: Unsaved changes");
         quit_times--;
         return;
       }
-	printf("\r\n");
+	write(STDOUT_FILENO, "\x1b[2J", 4);
+      write(STDOUT_FILENO, "\x1b[H", 3);
       exit(0);
       break;
     case CTRL_KEY('s'):
