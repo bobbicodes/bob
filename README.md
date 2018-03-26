@@ -20,9 +20,9 @@ A minimal console-based text editor like Vim or Nano, written such that a beginn
 
 Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll.
 
-# Credits
+# Credits (i.e. "Did you actually write it from scratch?"):
 
-I began with the work of [Salvatore Sanfilippo](https://github.com/antirez/kilo) as explained by [Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/) and I was in business!
+Ha ha, no. Who actually does that? Well, I began with the work of [Salvatore Sanfilippo](https://github.com/antirez/kilo) as explained by [Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/) and I was in business! They did the hard stuff... and way more than what was actually necessary - I can do basic everyday text editing completely without search, for example. So basically all I did was take the "core" and strip out all the fluff. Just so we can see all the guts.
 
 # How it works
 Normally the computer waits for you to type a line and press enter. The first thing we have to do is disable that behavior so the program updates on every key press instead. We call this "raw mode", and is defined by this function:
