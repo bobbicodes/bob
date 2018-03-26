@@ -1,5 +1,5 @@
-# bobs-text-editor
-better than all that other shit
+# Bob the text editor!
+Can we build it?
 
 # To build bob:
 Download bob.c and (from its directory) enter:
