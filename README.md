@@ -34,7 +34,7 @@ A truly minimal console-based text editor that a beginning programmer can easily
 Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll.
 
 # How it works
-Normally, the computer waits for you to type a whole line and press enter, and then it does a thing. We need to change the input mode so that our interface can respond to every key in real time instead. We call this "raw mode", and is defined by this function:
+Normal console behavior is to wait for you to type a whole line and press enter, and then the computer does a thing. We need to change the input mode so that the interface responds in real time every time a key is pressed. We call this "raw mode", and is defined by this function:
 
     void enableRawMode() {
         if (tcgetattr(STDIN_FILENO, &E.orig_termios) == -1) die("tcgetattr");
