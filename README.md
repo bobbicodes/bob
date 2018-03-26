@@ -17,7 +17,7 @@ To be able to punch people in the face who tell me I should use a certain text e
 	
 	"I use BOB, Biotch."
 	
-A truly minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which are useful but unnecessary.
+A truly minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which are useful but unnecessary. But we can put them in later... if we want to! And never have to figure out how some other piece of shit works.
 
 # What I got:
 ![](https://github.com/porkostomus/bobs-text-editor/blob/master/shot-2018-03-25_23-08-51.png)
