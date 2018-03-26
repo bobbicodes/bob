@@ -21,7 +21,7 @@ A truly minimal console-based text editor like Vim or Nano, written such that a 
 Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll.
 
 # How it works
-Normally, the computer waits for you to type a whole line and press enter, and then it does a thing. We need to change the input mode so we can respond to every key press in real time instead. We call this "raw mode", and is defined by this function:
+Normally, the computer waits for you to type a whole line and press enter, and then it does a thing. We need to change the input mode so that our interface can respond to every key in real time instead. We call this "raw mode", and is defined by this function:
 
     void enableRawMode() {
         if (tcgetattr(STDIN_FILENO, &E.orig_termios) == -1) die("tcgetattr");
@@ -43,7 +43,7 @@ Normally, the computer waits for you to type a whole line and press enter, and t
     
 We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system signals will not interfere with our program. But don't worry, we stored the original settings so that it can put it back to normal on exit.
 
-## Define input keys
+## Define input keys...
 
     int editorReadKey() {
         int nread;
@@ -91,7 +91,7 @@ We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system
         }
     }
 
-## Define special keys
+## ...and how they are processed
 
     void editorProcessKeypress() {
         static int quit_times = 1;
