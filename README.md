@@ -1,11 +1,11 @@
 # Bob the text editor!
 "Can we build it?"
     
-    Derp de der...
+    "Derp dee derp!"
     
-As long as your computer has a C compiler.
+It takes like 2 seconds, all you need is your machine's C compiler.
 
-# To build bob:
+# Build Bob:
 Download bob.c and (from its directory) enter:
 
     $ make bob
@@ -13,7 +13,7 @@ Download bob.c and (from its directory) enter:
 Put the binary on your $PATH to install bob. Bob is under 15 KB, aiming to be the smallest fully-functional (see below) UTF-8 Encoder.
 
 # What I wanted:
-A minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which, while useful, are not part of what I (for the purpose of this project) am considering minimal. Once we have the stupid little core in place with only basic functionality, we can work on adding features as plug-ins, because I always want this core version to exist.
+A truly minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which are useful but unnecessary.
 
 # What I got:
 ![](https://github.com/porkostomus/bobs-text-editor/blob/master/shot-2018-03-25_23-08-51.png)
