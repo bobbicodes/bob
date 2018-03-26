@@ -37,7 +37,7 @@ When people tell me to use a certain text editor - to be able to punch them in t
 Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll.
 
 # How it works
-Normal console behavior is to wait for you to type a whole line and press enter, and then the computer does a thing. We need to change the input mode so that the interface responds in real time every time a key is pressed. We call this "raw mode", and is defined by this function:
+We're starting with the actual bash terminal and literally bashing on it, smashing it into pieces until it does what we want, which is to put rows of characters on the screen. Normal console behavior is to wait for you to type a whole line and press enter, and then the computer does a thing. We need to change the input mode so that the interface responds in real time every time a key is pressed. We call this "raw mode", and is defined by this function:
 
     void enableRawMode() {
         if (tcgetattr(STDIN_FILENO, &E.orig_termios) == -1) die("tcgetattr");
