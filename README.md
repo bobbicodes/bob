@@ -15,7 +15,7 @@ Put the binary on your $PATH to install bob. Bob is under 15 KB, aiming to be th
 # What I wanted:
 To be able to punch people in the face who tell me I should use a certain text editor and say,
 	
-	"I use BOB, Biyotch."
+	"I use BOB, Biotch."
 	
 A truly minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which are useful but unnecessary.
 
