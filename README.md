@@ -19,7 +19,7 @@ Put the binary on your $PATH to install Bob:
 	
 # Use Bob
 	
-	$ bob
+	$ bob [FILENAME]
 
 # What I wanted
 To be able to punch people in the face who tell me I should use a certain text editor and say,
