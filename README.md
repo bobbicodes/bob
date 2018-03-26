@@ -1,7 +1,7 @@
-# Bob the UTF-8 Encoder!
+# Bob the Editor!
 "Can we build it?"
     
-    "Derp dee derp!"
+    "Derp de derrrrr!"
     
 It takes like 2 seconds, all you need is a C compiler. To check if it's there type:
 
