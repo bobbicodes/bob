@@ -19,14 +19,14 @@ Put the binary on your $PATH to install Bob:
 	
 	$ bob
 
-# What I wanted:
+# What I wanted
 To be able to punch people in the face who tell me I should use a certain text editor and say,
 	
 	"I use BOB, Biotch."
 	
-A truly minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which are useful but unnecessary. But we can put them in later... if we want to! And never have to figure out how some other piece of shit works.
+A truly minimal console-based text editor that a beginning programmer can easily read, comprehend and modify.
 
-# What I got:
+# What I got
 ![](https://github.com/porkostomus/bobs-text-editor/blob/master/shot-2018-03-25_23-08-51.png)
 
 Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll.
