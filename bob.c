@@ -1,5 +1,3 @@
-/*** includes ***/
-
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
@@ -15,12 +13,8 @@
 #include <termios.h>
 #include <time.h>
 #include <unistd.h>
-
-/*** defines ***/
-
-#define KILO_VERSION "0.0.1"
-#define KILO_TAB_STOP 8
-#define KILO_QUIT_TIMES 3
+#define TAB_STOP 8
+#define QUIT_TIMES 1
 #define CTRL_KEY(k) ((k) & 0x1f)
 
 enum editorKey {
@@ -35,8 +29,6 @@ enum editorKey {
   PAGE_UP,
   PAGE_DOWN
 };
-
-/*** data ***/
 
 typedef struct erow {
   int size;
@@ -63,13 +55,9 @@ struct editorConfig {
 
 struct editorConfig E;
 
-/*** prototypes ***/
-
 void editorSetStatusMessage(const char *fmt, ...);
 void editorRefreshScreen();
 char *editorPrompt(char *prompt);
-
-/*** terminal ***/
 
 void die(const char *s) {
   write(STDOUT_FILENO, "\x1b[2J", 4);
@@ -176,7 +164,7 @@ int editorRowCxToRx(erow *row, int cx) {
   int j;
   for (j = 0; j < cx; j++) {
     if (row->chars[j] == '\t')
-      rx += (KILO_TAB_STOP - 1) - (rx % KILO_TAB_STOP);
+      rx += (TAB_STOP - 1) - (rx % TAB_STOP);
     rx++;
   }
   return rx;
@@ -188,12 +176,12 @@ void editorUpdateRow(erow *row) {
   for (j = 0; j < row->size; j++)
     if (row->chars[j] == '\t') tabs++;
   free(row->render);
-  row->render = malloc(row->size + tabs*(KILO_TAB_STOP - 1) + 1);
+  row->render = malloc(row->size + tabs*(TAB_STOP - 1) + 1);
   int idx = 0;
   for (j = 0; j < row->size; j++) {
     if (row->chars[j] == '\t') {
       row->render[idx++] = ' ';
-      while (idx % KILO_TAB_STOP != 0) row->render[idx++] = ' ';
+      while (idx % TAB_STOP != 0) row->render[idx++] = ' ';
     } else {
       row->render[idx++] = row->chars[j];
     }
@@ -561,7 +549,7 @@ void editorMoveCursor(int key) {
 }
 
 void editorProcessKeypress() {
-  static int quit_times = KILO_QUIT_TIMES;
+  static int quit_times = QUIT_TIMES;
   int c = editorReadKey();
   switch (c) {
     case '\r':
@@ -621,7 +609,7 @@ void editorProcessKeypress() {
       editorInsertChar(c);
       break;
   }
-  quit_times = KILO_QUIT_TIMES;
+  quit_times = QUIT_TIMES;
 }
 
 /*** init ***/
