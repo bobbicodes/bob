@@ -10,7 +10,7 @@ Download bob.c and (from its directory) enter:
 
     $ make bob
 
-Put the binary on your $PATH to install bob. Bob is under 15 KB, aiming to be the smallest fully-functional (see below) editor.
+Put the binary on your $PATH to install bob. Bob is under 15 KB, aiming to be the smallest fully-functional (see below) UTF-8 Encoder.
 
 # What I wanted:
 A minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which, while useful, are not part of what I (for the purpose of this project) am considering minimal. Once we have the stupid little core in place with only basic functionality, we can work on adding features as plug-ins, because I always want this core version to exist.
@@ -23,6 +23,9 @@ Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro
 # Credits (i.e. "Did you actually write it from scratch?"):
 
 Ha ha, no. Who actually does that? Well, I began with the work of [Salvatore Sanfilippo](https://github.com/antirez/kilo) as explained by [Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/) and I was in business! They did the hard stuff... and way more than what was actually necessary - I can do basic everyday text editing completely without search, for example. So basically all I did was take the "core" and strip out all the fluff. Just so we can see all the guts.
+
+# TODO
+Make it totally non-invasive, so you can write files without interrupting the flow of your terminal session.
 
 # How it works
 Normally, the computer waits for you to type a whole line and press enter, and then it does a thing. We need to change the input mode so we can respond to every key press in real time instead. We call this "raw mode", and is defined by this function:
