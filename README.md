@@ -25,7 +25,7 @@ Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro
 Ha ha, no. Who actually does that? Well, I began with the work of [Salvatore Sanfilippo](https://github.com/antirez/kilo) as explained by [Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/) and I was in business! They did the hard stuff... and way more than what was actually necessary - I can do basic everyday text editing completely without search, for example. So basically all I did was take the "core" and strip out all the fluff. Just so we can see all the guts.
 
 # How it works
-Normally the computer waits for you to type a line and press enter. The first thing we have to do is disable that behavior so the program updates on every key press instead. We call this "raw mode", and is defined by this function:
+Normally, the computer waits for you to type a whole line and press enter, and then it does a thing. We need to change the input mode so we can respond to every key press in real time instead. We call this "raw mode", and is defined by this function:
 
     void enableRawMode() {
         if (tcgetattr(STDIN_FILENO, &E.orig_termios) == -1) die("tcgetattr");
@@ -45,4 +45,6 @@ Normally the computer waits for you to type a line and press enter. The first th
         die("tcsetattr");
     }
     
-We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, Ctrl-V, and Ctrl-M so those system signals will not interfere with our program. But don't worry, we stored the original settings so that it can put it back to normal on exit.
+We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system signals will not interfere with our program. But don't worry, we stored the original settings so that it can put it back to normal on exit.
+
+
