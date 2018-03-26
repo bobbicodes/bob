@@ -22,11 +22,14 @@ Put the binary on your $PATH to install Bob:
 	$ bob [FILENAME]
 
 # What I wanted
-To be able to punch people in the face who tell me I should use a certain text editor and say,
+
+A truly minimal console-based text editor that a beginning programmer can easily read, comprehend and modify.
+
+## What I actually wanted
+
+When people tell me to use a certain text editor - to be able to punch them in the face and say,
 	
 	"I use BOB, Biotch."
-	
-A truly minimal console-based text editor that a beginning programmer can easily read, comprehend and modify.
 
 # What I got
 ![](https://github.com/porkostomus/bobs-text-editor/blob/master/shot-2018-03-25_23-08-51.png)
