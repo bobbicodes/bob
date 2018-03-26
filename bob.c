@@ -14,7 +14,6 @@
 #include <time.h>
 #include <unistd.h>
 #define TAB_STOP 8
-#define QUIT_TIMES 1
 #define CTRL_KEY(k) ((k) & 0x1f)
 
 enum editorKey {
@@ -60,10 +59,9 @@ void editorRefreshScreen();
 char *editorPrompt(char *prompt);
 
 void die(const char *s) {
-  write(STDOUT_FILENO, "\x1b[2J", 4);
-  write(STDOUT_FILENO, "\x1b[H", 3);
-  perror(s);
-  exit(1);
+	printf("\r\n");
+	perror(s);
+	exit(1);
 }
 
 void disableRawMode() {
@@ -549,7 +547,7 @@ void editorMoveCursor(int key) {
 }
 
 void editorProcessKeypress() {
-  static int quit_times = QUIT_TIMES;
+  static int quit_times = 1;
   int c = editorReadKey();
   switch (c) {
     case '\r':
@@ -557,13 +555,11 @@ void editorProcessKeypress() {
       break;
     case CTRL_KEY('q'):
       if (E.dirty && quit_times > 0) {
-        editorSetStatusMessage("Unsaved changes! "
-          "Press Ctrl-Q to confirm.");
+        editorSetStatusMessage("Unsaved changes! Ctrl-Q to confirm.");
         quit_times--;
         return;
       }
-      write(STDOUT_FILENO, "\x1b[2J", 4);
-      write(STDOUT_FILENO, "\x1b[H", 3);
+	printf("\r\n");
       exit(0);
       break;
     case CTRL_KEY('s'):
@@ -609,7 +605,7 @@ void editorProcessKeypress() {
       editorInsertChar(c);
       break;
   }
-  quit_times = QUIT_TIMES;
+  quit_times = 1;
 }
 
 /*** init ***/
