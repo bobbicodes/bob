@@ -5,12 +5,19 @@
     
 It takes like 2 seconds, all you need is your machine's C compiler.
 
-# Build Bob:
+# Build Bob
 Download bob.c and (from its directory) enter:
 
     $ make bob
 
-Put the binary on your $PATH to install bob. Bob is under 15 KB, aiming to be the smallest fully-functional (see below) UTF-8 Encoder.
+# Install Bob
+Put the binary on your $PATH to install Bob:
+
+	$ sudo mv bob /usr/bin/bob
+	
+# Use Bob
+	
+	$ bob
 
 # What I wanted:
 To be able to punch people in the face who tell me I should use a certain text editor and say,
