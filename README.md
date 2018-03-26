@@ -93,7 +93,7 @@ We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system
             }
         }
         return '\x1b';
-    } else {
-        return c;
+        } else {
+            return c;
+        }
     }
-}
