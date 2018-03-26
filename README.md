@@ -155,6 +155,7 @@ We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system
         quit_times = 1;
     }
 
-# Credits (i.e. "Did you actually write it from scratch?"):
+# Credits 
+[Salvatore Sanfilippo](https://github.com/antirez/kilo)
 
-Ha ha, no. Who actually does that? Well, I began with the work of [Salvatore Sanfilippo](https://github.com/antirez/kilo) as explained by [Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/) and I was in business! They did the hard stuff... and way more than what was actually necessary - I can do basic everyday text editing completely without search, for example. So basically all I did was take the "core" and strip out all the fluff. Just so we can see all the guts. So I can rub my eyeballs all over it.
+[Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/)
