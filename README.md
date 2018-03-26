@@ -1,12 +1,16 @@
 # Bob the text editor!
-Can we build it?
+"Can we build it?"
+    
+    Derp de der...
+    
+As long as your computer has a C compiler.
 
 # To build bob:
 Download bob.c and (from its directory) enter:
 
     $ make bob
 
-Put the binary on your $PATH to install bob.
+Put the binary on your $PATH to install bob. Bob is under 15 KB, aiming to be the smallest fully-functional (see below) editor.
 
 # What I wanted:
 A minimal console-based text editor like Vim or Nano, written such that a beginning programmer (i.e. me!) can easily read it and understand how it works. Other so-called "minimal" editors still have loads of stuff like search and syntax-highlighting which, while useful, are not part of what I (for the purpose of this project) am considering minimal. Once we have the stupid little core in place with only basic functionality, we can work on adding features as plug-ins, because I always want this core version to exist.
