@@ -3,7 +3,9 @@
     
     "Derp dee derp!"
     
-It takes like 2 seconds, all you need is your machine's C compiler.
+It takes like 2 seconds, all you need is a C compiler. To check if it's there type:
+
+	cc --version
 
 # Build Bob
 Download bob.c and (from its directory) enter:
