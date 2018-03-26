@@ -45,7 +45,7 @@ Normally, the computer waits for you to type a whole line and press enter, and t
         die("tcsetattr");
     }
     
-We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system signals will not interfere with our program. But don't worry, we stored the original settings so that it can put it back to normal on exit.
+We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system signals will not interfere with our program. But don't worry, we stored the original settings so that we can put them back when we're done.
 
 ## Define input keys...
 
