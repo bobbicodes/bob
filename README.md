@@ -25,7 +25,7 @@ Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro
 Ha ha, no. Who actually does that? Well, I began with the work of [Salvatore Sanfilippo](https://github.com/antirez/kilo) as explained by [Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/) and I was in business! They did the hard stuff... and way more than what was actually necessary - I can do basic everyday text editing completely without search, for example. So basically all I did was take the "core" and strip out all the fluff. Just so we can see all the guts.
 
 # TODO
-Make it totally non-invasive, so you can write files without interrupting the flow of your terminal session.
+Make it totally non-invasive, so you can write files without interrupting the flow of your terminal session. Of course, then it won't look as cool...
 
 # How it works
 Normally, the computer waits for you to type a whole line and press enter, and then it does a thing. We need to change the input mode so we can respond to every key press in real time instead. We call this "raw mode", and is defined by this function:
