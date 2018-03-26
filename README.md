@@ -18,7 +18,11 @@ A minimal console-based text editor like Vim or Nano, written such that a beginn
 # What I got:
 ![](https://github.com/porkostomus/bobs-text-editor/blob/master/shot-2018-03-25_23-08-51.png)
 
-Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll
+Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll.
+
+# Credits
+
+I began with the work of [Salvatore Sanfilippo](https://github.com/antirez/kilo) as explained by [Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/) and I was in business!
 
 # How it works
 Normally the computer waits for you to type a line and press enter. The first thing we have to do is disable that behavior so the program updates on every key press instead. We call this "raw mode", and is defined by this function:
