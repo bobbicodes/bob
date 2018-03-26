@@ -97,3 +97,67 @@ We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, and Ctrl-V so those system
             return c;
         }
     }
+
+## Define special keys
+
+    void editorProcessKeypress() {
+        static int quit_times = 1;
+        int c = editorReadKey();
+        switch (c) {
+            case '\r':
+                editorInsertNewline();
+                break;
+            case CTRL_KEY('q'):
+                if (E.dirty && quit_times > 0) {
+                    editorSetStatusMessage("Unsaved changes! Ctrl-Q to confirm.");
+                    quit_times--;
+                    return;
+                }
+	            printf("\r\n");
+                exit(0);
+                break;
+            case CTRL_KEY('s'):
+                editorSave();
+                break;
+            case HOME_KEY:
+                E.cx = 0;
+                break;
+            case END_KEY:
+                if (E.cy < E.numrows)
+                E.cx = E.row[E.cy].size;
+                break;
+            case BACKSPACE:
+            case CTRL_KEY('h'):
+            case DEL_KEY:
+                if (c == DEL_KEY) editorMoveCursor(ARROW_RIGHT);
+                editorDelChar();
+                break;
+            case PAGE_UP:
+            case PAGE_DOWN:
+                {
+                    if (c == PAGE_UP) {
+                        E.cy = E.rowoff;
+                    } else if (c == PAGE_DOWN) {
+                        E.cy = E.rowoff + E.screenrows - 1;
+                        if (E.cy > E.numrows) E.cy = E.numrows;
+                    }
+                    int times = E.screenrows;
+                    while (times--)
+                        editorMoveCursor(c == PAGE_UP ? ARROW_UP : ARROW_DOWN);
+                }
+                break;
+            case ARROW_UP:
+            case ARROW_DOWN:
+            case ARROW_LEFT:
+            case ARROW_RIGHT:
+                editorMoveCursor(c);
+                break;
+            case CTRL_KEY('l'):
+            case '\x1b':
+                break;
+            default:
+                editorInsertChar(c);
+                break;
+        }
+        quit_times = 1;
+    }
