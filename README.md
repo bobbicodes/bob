@@ -31,11 +31,9 @@ Normally the computer waits for you to type a line and press enter. The first th
         if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw) == -1) die("tcsetattr");
     }
 
-What this has to do is store the original settings so that it can put it back to normal on exit:
-
     void disableRawMode() {
         if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &E.orig_termios) == -1)
         die("tcsetattr");
     }
     
-We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, Ctrl-V, and Ctrl-M so those system signals will not interfere with our program.
+We have also disabled Ctrl-C, Ctrl-Z, Ctrl-S, Ctrl-Q, Ctrl-V, and Ctrl-M so those system signals will not interfere with our program. But don't worry, we stored the original settings so that it can put it back to normal on exit.
