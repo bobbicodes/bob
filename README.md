@@ -1,5 +1,3 @@
-[![asciicast](https://asciinema.org/a/177288.png)](https://asciinema.org/a/177288)
-
 # Bob the Editor!
 "Can we build it?"
     
