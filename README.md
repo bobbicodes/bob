@@ -7,6 +7,10 @@ It takes like 2 seconds, all you need is a C compiler. To check if it's there ty
 
 	cc --version
 
+Install it (if needed) with:
+
+    $ sudo apt-get install gcc make
+
 # Build Bob
 Download bob.c and (from its directory) enter:
 
