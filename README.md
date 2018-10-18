@@ -42,7 +42,7 @@ You must have `inotifywait` installed on your machine, as well as [Planck](http:
 # What I wanted
 
 A truly minimal console-based text editor that a beginning programmer can easily read, comprehend and modify.
-Then when I started writing Clojure full-time I wanted to be able to evaluate forms right from the editor. 
+Then when I started writing Clojure full-time I wanted to be able to evaluate code right from the editor. 
 
 ## What I actually wanted
 
