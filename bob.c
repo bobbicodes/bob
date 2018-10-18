@@ -143,6 +143,13 @@ struct editorSyntax HLDB[] = {
     "//", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS
   },
+  {
+    "clj",
+    Clj_HL_extensions,
+    Clj_HL_keywords,
+    ";", NULL, NULL,
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS
+  }
 };
 
 
