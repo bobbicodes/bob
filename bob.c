@@ -740,13 +740,13 @@ void editorDrawRows(struct abuf *ab) {
         if (welcomelen > E.screencols) welcomelen = E.screencols;
         int padding = (E.screencols - welcomelen) / 2;
         if (padding) {
-          abAppend(ab, "~", 1);
+          abAppend(ab, " ", 1);
           padding--;
         }
         while (padding--) abAppend(ab, " ", 1);
         abAppend(ab, welcome, welcomelen);
       } else {
-        abAppend(ab, "~", 1);
+        abAppend(ab, " ", 1);
       }
     } else {
       int len = E.row[filerow].rsize - E.coloff;
