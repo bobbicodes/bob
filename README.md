@@ -1,3 +1,6 @@
+![Repl](2018-10-18-033538_1366x768_scrot.png)
+[View screencast here](https://youtu.be/f_1ZLgQtaWg)
+
 # Bob the Editor!
 "Can we build it?"
     
@@ -34,8 +37,6 @@ Open another terminal and run the `rerun` script (set to executable with `chmod 
 $ ./rerun plk planckeval.cljs
 ```
 `rerun` uses `inotifywait` to watch and reload your code. You must have `inotifywait` installed on your machine, as well as Planck.
-
-See a demo [here](https://youtu.be/f_1ZLgQtaWg).
 
 # What I wanted
 
