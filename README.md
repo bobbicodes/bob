@@ -1,25 +1,28 @@
+# Bob the Editor!
+
 ![Repl](2018-10-18-033538_1366x768_scrot.png)
 [Watch screencast](https://youtu.be/f_1ZLgQtaWg)
 
-# Bob the Editor!
-"Can we build it?"
+## "Can we build it?"
     
-    "Derp de derrrrr!"
+>"Derp de derrrrr!"
     
 It takes like 2 seconds, all you need is a C compiler. To check if it's there type:
 
-	cc --version
+	$ cc --version
 
 Install it (if needed) with:
 
     $ sudo apt-get install gcc make
 
 # Build Bob
+
 Download bob.c and (from its directory) enter:
 
     $ make bob
 
 # Install Bob
+
 Put the binary on your $PATH to install Bob:
 
 	$ mv bob ~/bin/bob
@@ -46,7 +49,7 @@ A truly minimal console-based text editor that a beginning programmer can easily
 
 When people tell me to use a certain text editor - to be able to punch them in the face and say,
 	
-	"I use BOB, Biotch."
+>"I use BOB, Biotch."
 
 # What I got
 ![](https://github.com/porkostomus/bobs-text-editor/blob/master/shot-2018-03-25_23-08-51.png)
