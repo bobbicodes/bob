@@ -1,5 +1,5 @@
 ![Repl](2018-10-18-033538_1366x768_scrot.png)
-[View screencast here](https://youtu.be/f_1ZLgQtaWg)
+[Watch screencast](https://youtu.be/f_1ZLgQtaWg)
 
 # Bob the Editor!
 "Can we build it?"
