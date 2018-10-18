@@ -2,28 +2,9 @@
 
 # Events that occur within this time from an initial one are ignored
 ignore_secs=0.25
-clear='false'
-verbose='false'
-
-while [ $# -gt 0 ]; do
-    case "$1" in
-      -c|--clear) clear='true';;
-      -v|--verbose) verbose='true' ;;
-      -h|--help) usage; exit;;
-      *) break;;
-    esac
-    shift
-done
 
 function execute() {
-    if [ $verbose = "true" ]; then
-        if [ -n "$changes" ]; then
-            echo -e "Changed: $(echo -e $changes | cut -d' ' -f2 | sort -u | tr '\n' ' ')"
-            changes=""
-        fi
-        echo "$@"
-    fi
-    plk planckeval.cljs
+        plk planckeval.cljs
 }
 
 execute plk planckeval.cljs
