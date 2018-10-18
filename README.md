@@ -1,6 +1,7 @@
 # Bob the Editor!
 
 ![Repl](2018-10-18-033538_1366x768_scrot.png)
+
 [Watch screencast](https://youtu.be/f_1ZLgQtaWg)
 
 ## "Can we build it?"
@@ -33,13 +34,9 @@ Put the binary on your $PATH to install Bob:
 
 # Clojure evaluation
 
-The Ctrl+e key-binding sends the buffer to [Planck](http://planck-repl.org/) which prints the result of the last expression.
-Open another terminal and run the `repl` script (set to executable with `chmod +x repl`) to connect to your Clojurescript REPL via JavaScriptCore:
-
-```
-$ ./repl
-```
-You must have `inotifywait` installed on your machine, as well as Planck.
+Run the `repl` script (set to executable with `chmod +x repl`) to connect to a Clojurescript REPL via JavaScriptCore.
+You must have `inotifywait` installed on your machine, as well as [Planck](http://planck-repl.org/).
+Pressing **Ctrl+e** evaluates the whole buffer and prints the result of the last expression.
 
 # What I wanted
 
