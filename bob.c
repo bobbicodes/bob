@@ -89,12 +89,51 @@ struct editorConfig E;
 
 char *C_HL_extensions[] = { ".c", ".h", ".cpp", NULL };
 
+char *Clj_HL_extensions[] = { ".clj", "cljs", ".cljc", NULL };
+
 char *C_HL_keywords[] = {
   "switch", "if", "while", "for", "break", "continue", "return", "else",
   "struct", "union", "typedef", "static", "enum", "class", "case",
   "int|", "long|", "double|", "float|", "char|", "unsigned|", "signed|",
   "void|", NULL
 };
+
+char *Clj_HL_keywords[] = {
+  "fn", "defn", "defn-", "def", "let", "letfn", "declare", "ns", "if", "if-not",
+  "when", "when-not", "when-let", "when-first", "if-let", "cond", "condp", "do",
+  "case", "when-some", "if-some", "and", "or", "for", "doseq", "dotimes", "while",
+  "->", "->>", "as->", "cond->", "cond->>", "some->", "some->>", "lazy-cat", "lazy-seq",
+  "=|", "==|", "not=|", "not|", "identical?|", "compare|", "map|", "map-indexed|", "reduce|",
+  "true?|", "false?|", "instance?|", "nil?|", "some|", "some?|", "+|", "-|", "*|", "/|",
+  "quot|", "rem|", "mod|", "inc|", "dec|", "max|", "min|", "<|", ">|", "<=|", ">=|",
+  "int|", "zero?|", "pos?|", "neg?|", "even?|", "odd?|", "number?|", "integer?|",
+  "rand|", "rand-int|", "atom|", "deref|", "swap!|", "reset!|", "compare-and-set!|",
+  "add-watch|", "remove-watch|", "set-validator!|", "get-validator|", "identity|",
+  "constantly|", "comp|", "complement|", "partial|", "juxt|", "memoize|", "fnil|",
+  "every-pred|", "some-fn|", "apply|", "fn?|", "ifn?|", "str|", "name|", "count|",
+  "get|", "subs|", "replace|", "reverse|", "re-find|", "re-seq|", "re-matches",
+  "re-pattern|", "char|", "string?|", "count|", "empty|", "not-empty|", "into|",
+  "conj|", "distict|", "distinct?|", "empty?|", "every?|", "not-every?|", "some|",
+  "not-any?|", "sequential?|", "associative?|", "sorted?|", "counted?|", "reversible?|",
+  "coll?|", "list?|", "vector?|", "set?|", "map?|", "seq?|", "vec|", "vector|", "nth|",
+  "get|", "peek|", "assoc|", "pop|", "subvec|", "rseq|", "mapv|", "filterv|", "reduce-kv|",
+  "hash-map|", "array-map|", "zipmap|", "sorted-map|", "sorted-map-by|", "frequencies|",
+  "group-by|", "get-in|", "contains?|", "find|", "key|", "keys|", "val|", "vals|",
+  "assoc-in|", "dissoc|", "merge|", "merge-with|", "select-keys|", "update-in|",
+  "subseq|", "rsubseq|", "list|", "list*|", "first|", "rest|", "cons|", "set|", "hash-set|",
+  "sorted-set|", "sorted-set-by|", "disj|", "filter|", "remove|", "take-nth|",
+  "concat|", "mapcat|", "cycle|", "interleave|", "interpose|", "nthrest|", "next|",
+  "fnext|", "nnext|", "drop|", "drop-while|", "take-last|", "take|", "take-while|",
+  "butlast|", "drop-last|", "flatten|", "partition|", "partition-all|", "partition-by|",
+  "split-at|", "split-with|", "shuffle|", "sort|", "sort-by|", "second|", "last|",
+  "ffirst|", "nfirst|", "nthnext|", "rand-nth|", "max-key|", "min-key|", "reductions|",
+  "into-array|", "to-array-2d|", "dorun|", "doall|", "realized?|", "seq|", "repeat|",
+  "repeatedly|", "iterate|", "range|", "tree-seq|", "keep|", "keep-indexed|",
+  "bit-and|", "bit-or|", "bit-xor|", "bit-not|", "bit-flip|", "bit-set|",
+  "bit-shift-right|", "bit-shift-left|", "bit-and-not|", "bit-clear|", "bit-test|",
+  "unsigned-bit-shift-right|", NULL
+};
+
 
 struct editorSyntax HLDB[] = {
   {
