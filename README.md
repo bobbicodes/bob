@@ -34,7 +34,7 @@ Put the binary on your $PATH to install Bob:
 # Clojure evaluation
 
 The Ctrl+e key-binding sends the buffer to [Planck](http://planck-repl.org/) which prints the result of the last expression.
-Open another terminal and run the `rerun` script (set to executable with `chmod +x rerun`):
+Open another terminal and run the `rerun` script (set to executable with `chmod +x rerun`) to connect to your REPL:
 
 ```
 $ ./rerun plk planckeval.cljs
