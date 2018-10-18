@@ -25,6 +25,18 @@ Put the binary on your $PATH to install Bob:
 	
 	$ bob [FILENAME]
 
+# Clojure evaluation
+
+The Ctrl+e key-binding sends the buffer to [Planck](http://planck-repl.org/) which prints the result of the last expression.
+Open another terminal and run the `rerun` script (set to executable with `chmod +x rerun`):
+
+```
+$ ./rerun plk planckeval.cljs
+```
+`rerun` uses `inotifywait` to watch and reload your code. You must have `inotifywait` installed on your machine, as well as Planck.
+
+See a demo [here](https://youtu.be/f_1ZLgQtaWg).
+
 # What I wanted
 
 A truly minimal console-based text editor that a beginning programmer can easily read, comprehend and modify.
@@ -39,6 +51,10 @@ When people tell me to use a certain text editor - to be able to punch them in t
 ![](https://github.com/porkostomus/bobs-text-editor/blob/master/shot-2018-03-25_23-08-51.png)
 
 Here it is inside of [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term), cuz that's how I roll.
+
+# TODO:
+
+Figure out how to use a real Socket REPL (it's just Telnet) or pREPL.
 
 # How it works
 We're starting with the actual bash terminal and literally bashing on it, smashing it into pieces until it does what we want, which is to put rows of characters on the screen. Normal console behavior is to wait for you to type a whole line and press enter, and then the computer does a thing. We need to change the input mode so that the interface responds in real time every time a key is pressed. We call this "raw mode", and is defined by this function:
