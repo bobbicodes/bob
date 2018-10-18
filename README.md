@@ -34,12 +34,12 @@ Put the binary on your $PATH to install Bob:
 # Clojure evaluation
 
 The Ctrl+e key-binding sends the buffer to [Planck](http://planck-repl.org/) which prints the result of the last expression.
-Open another terminal and run the `rerun` script (set to executable with `chmod +x rerun`) to connect to your Clojurescript REPL via JavaScriptCore:
+Open another terminal and run the `repl` script (set to executable with `chmod +x repl`) to connect to your Clojurescript REPL via JavaScriptCore:
 
 ```
-$ ./rerun plk planckeval.cljs
+$ ./repl
 ```
-`rerun` uses `inotifywait` to watch and reload your code. You must have `inotifywait` installed on your machine, as well as Planck.
+You must have `inotifywait` installed on your machine, as well as Planck.
 
 # What I wanted
 
