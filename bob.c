@@ -620,6 +620,30 @@ void editorSave() {
   editorSetStatusMessage("Can't save! I/O error: %s", strerror(errno));
 }
 
+/*** eval ***/
+
+void editorEval() {
+  int len;
+  char *buf = editorRowsToString(&len);
+  int fd = open("eval.bob", O_RDWR | O_CREAT, 0644);
+  if (fd != -1) {
+    if (ftruncate(fd, len) != -1) {
+      if (write(fd, buf, len) == len) {
+        close(fd);
+        free(buf);
+        E.dirty = 0;
+        editorSetStatusMessage("Sent to eval");
+        return;
+      }
+    }
+    close(fd);
+  }
+  free(buf);
+  editorSetStatusMessage("I/O error: %s", strerror(errno));
+}
+
+
+
 /*** find ***/
 
 void editorFindCallback(char *query, int key) {
@@ -791,8 +815,6 @@ void editorDrawRows(struct abuf *ab) {
   }
 }
 
-
-
 void editorDrawStatusBar(struct abuf *ab) {
   abAppend(ab, "\x1b[7m", 4);
   char status[80], rstatus[80];
@@ -942,6 +964,9 @@ void editorProcessKeypress() {
       break;
     case CTRL_KEY('s'):
       editorSave();
+      break;
+    case CTRL_KEY('e'):
+      editorEval();
       break;
     case HOME_KEY:
       E.cx = 0;
