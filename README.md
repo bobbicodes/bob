@@ -56,5 +56,5 @@ Figure out how to use pREPL and show results right in status bar.
 
 # Credits
 
-This is basically the [Kilo](https://github.com/antirez/kilo) editor with a Clojure layer added for the syntax highlighting and REPL eval. If you're interested in learning more about how the code works you should definitely check out [Snaptoken's tutorial]( https://viewsourcecode.org/snaptoken/kilo/). The unique and remarkable part about it is that it does not depend on ncurses, or any library, which means there's not even a need for a `Makefile`.
+Based heavily on the [Kilo](https://github.com/antirez/kilo) editor with a Clojure layer added for the syntax highlighting and REPL eval. If you're interested in learning more about how the code works you should definitely check out [Snaptoken's tutorial]( https://viewsourcecode.org/snaptoken/kilo/). The unique and remarkable part about it is that it does not depend on ncurses, or any library, which means there's not even a need for a `Makefile`.
 
