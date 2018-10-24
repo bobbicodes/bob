@@ -26,7 +26,7 @@ Download bob.c and (from its directory) enter:
 
 Put the binary on your $PATH to install Bob:
 
-	$ mv bob ~/bin/bob
+	$ mv bob /usr/local/bin/bob
 	
 # Use Bob
 	
