@@ -52,9 +52,9 @@ When people tell me to use a certain text editor - to be able to punch them in t
 
 # TODO:
 
-Figure out how to use pREPL and show results right in status bar.
-
 Try on Windows or Mac and add specific instructions if needed.
+
+Figure out how to use pREPL and show results right in status bar. Doing eval by hijacking Planck is an obviously hacky solution and would be nice to bring this functionality into the editor itself.
 
 # Credits
 
