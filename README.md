@@ -53,3 +53,11 @@ When people tell me to use a certain text editor - to be able to punch them in t
 # TODO:
 
 Figure out how to use pREPL and show results right in status bar.
+
+# Credits
+
+This is based on the Kilo editor, which was made into an extremely nice tutorial which was also referenced heavily:  
+
+[Salvatore Sanfilippo](https://github.com/antirez/kilo)
+ 
+[Snaptoken]( https://viewsourcecode.org/snaptoken/kilo/)
