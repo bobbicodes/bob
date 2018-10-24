@@ -48,7 +48,7 @@ Then when I started writing Clojure full-time I wanted to be able to evaluate co
 
 When people tell me to use a certain text editor - to be able to punch them in the face and say,
 	
->"I use BOB, Biotch."
+>"I use BOB, biotch."
 
 # TODO:
 
