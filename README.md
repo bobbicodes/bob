@@ -56,7 +56,7 @@ Figure out how to use pREPL and show results right in status bar.
 
 # Credits
 
-This is based on the Kilo editor, which was made into an extremely nice tutorial which was also referenced heavily:  
+This is based on the Kilo editor, which was made into an extremely nice tutorial which was also referenced heavily. If you're interested in learning how the code works and the history of how it was built you should definitely check them both out:
 
 [Salvatore Sanfilippo](https://github.com/antirez/kilo)
  
