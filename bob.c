@@ -13,7 +13,7 @@
 #include <termios.h>
 #include <time.h>
 #include <unistd.h>
-#define TAB_STOP 8
+#define TAB_STOP 4
 #define CTRL_KEY(k) ((k) & 0x1f)
 
 enum editorKey {
@@ -820,7 +820,7 @@ void editorDrawStatusBar(struct abuf *ab) {
   char status[80], rstatus[80];
   int len = snprintf(status, sizeof(status), "%.20s %s",
                      E.filename ? E.filename : "[Untitled]",
-                     E.dirty ? "(modified)" : "");
+                     E.dirty ? "*" : "");
   int rlen = snprintf(rstatus, sizeof(rstatus), "%s %d/%d",
                       E.syntax ? E.syntax->filetype : "", E.cy + 1, E.numrows);
   if (len > E.screencols) len = E.screencols;
